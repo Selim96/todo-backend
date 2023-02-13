@@ -30,8 +30,8 @@ const todosSchema: typeof Schema = new Schema(
 );
 
 const addTodo = Joi.object({
-  title: Joi.string().required(),
-  description: Joi.string().min(7).max(60),
+  title: Joi.string().required().min(3).max(50),
+  description: Joi.string().min(7).max(150),
   status: Joi.boolean().default(false),
   isPrivate: Joi.boolean().default(false)
 });
